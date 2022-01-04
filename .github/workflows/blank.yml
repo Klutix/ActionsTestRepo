@@ -10,7 +10,6 @@ on:
 jobs:
   print-username:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Print the input name to STDOUT
         uses: Mudlet/xmlstarlet-action@v1.1
