@@ -25,3 +25,7 @@ jobs:
         uses: Mudlet/xmlstarlet-action@master
         with:
           args: ed -r "//*/@id" -v ID xml/tab-obj.xml
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
