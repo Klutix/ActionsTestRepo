@@ -1,9 +1,18 @@
-name: learn-github-actions
-on: [deployment]
+on:
+  workflow_call:
+    inputs:
+      username:
+        description: 'A username passed from the caller workflow'
+        default: 'john-doe'
+        required: false
+        type: string
+  
 jobs:
-  check-bats-version:
+  print-username:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: Mudlet/xmlstarlet-action@v1.1
+      - name: Print the input name to STDOUT
         with:
           args: ed -r "//*/@id" -v ID xml/tab-obj.xml
