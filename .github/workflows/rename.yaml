@@ -24,7 +24,7 @@ jobs:
       - name: Rename with Startlet
         uses: Mudlet/xmlstarlet-action@master
         with:
-          args: ed -r "//*/@id" -v ID xml/tab-obj.xml
+          args: ed -r "//*/@id" -v ID main/testXml.xml
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
