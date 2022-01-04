@@ -1,0 +1,9 @@
+name: learn-github-actions
+on: [workflow_run]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Mudlet/xmlstarlet-action@v1.1
+        with:
+          args: ed -r "//*/@id" -v ID xml/tab-obj.xml
